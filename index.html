@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maaf ya amii 🥺</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fce3ec, #ffc8dd);
+      font-family: 'Patrick Hand', cursive;
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff69b4;
+      margin-top: 30px;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .content {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      background: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+    }
+
+    .bubble {
+      background: #ffe4e1;
+      border-radius: 15px;
+      padding: 15px;
+      margin: 15px 0;
+      font-size: 1.2em;
+      position: relative;
+      display: inline-block;
+      max-width: 90%;
+    }
+
+    .bubble::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top-color: #ffe4e1;
+      border-bottom: 0;
+      margin-left: -10px;
+      margin-bottom: -10px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #ff69b4;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff1493;
+    }
+
+    .hidden-message {
+      display: none;
+      font-size: 1.3em;
+      margin-top: 30px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    img {
+      margin-top: 20px;
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+    }
+
+    .heart {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+      animation: fall 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% {transform: translateY(-50px) rotate(0);}
+      100% {transform: translateY(120vh) rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Maaf yaa amiii 🥺</h1>
+
+  <div class="content">
+    <div class="bubble">Ubi tahu ubi udah nyakitin hati amii, nuduh amii, dan ngehancurin kepercayaan amii ke ubi... 💔</div>
+    <div class="bubble">Ubi juga ngehancurin semua kenangan kita selama 3 tahun, impian kita, Zayn, Syifa, dan rencana liburan kitaaa 🥺</div>
+    <div class="bubble">Ubi bener-bener nyesel banget... 😔</div>
+    <div class="bubble">Ubi gak mau kehilangan amii 🥺, ubi sayang bangett sama amii 💖</div>
+
+    <button class="btn" onclick="showMessage()">Klik kalau amii masih mau baca 😢</button>
+    <button class="btn" onclick="playAudio()">Play Musik 🎶</button>
+
+    <div class="hidden-message" id="loveMessage">
+      <div class="bubble">Plisss tolong kasih Ubi kesempatan lagii... Ubi bakal berusaha ngilangin sifat kekanak-kanakan dan bakal berubah jadi lebih baik 🥹</div>
+      <div class="bubble">Ubi gak minta amii maafin sekarang, karena ubi paham kalau amii butuh waktu buat sendirii 💞</div>
+      <div class="bubble">Ubi sayang bangettt sama amii, tolong jangan pergi yaaa 🥺💗</div>
+      <img src="foto-kita.jpg" alt="Foto Kita">
+    </div>
+  </div>
+
+  <audio id="bgm" loop>
+    <source src="audio-mellow.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showMessage() {
+      document.getElementById('loveMessage').style.display = 'block';
+    }
+
+    function playAudio() {
+      var audio = document.getElementById("bgm");
+      audio.play();
+    }
+
+    // efek hati jatuh
+    setInterval(function(){
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      document.body.appendChild(heart);
+      setTimeout(function(){
+        heart.remove();
+      }, 6000);
+    }, 500);
+  </script>
+
+</body>
+</html>
